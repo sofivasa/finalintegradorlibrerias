@@ -20,3 +20,18 @@
 }
 }
 enum variant_type { Symbol, Number, List, Proc, Lambda, Cadena };
+
+enum variant_type { Symbol, Number, List, Proc, Lambda, Cadena };
+
+struct Entorno;
+
+class Variant {
+public:
+    typedef Variant(*proc_type)(const std::vector<Variant> &);
+
+    typedef std::vector<Variant>::const_iterator iter;
+    typedef std::map<std::string, Variant> map;
+
+    variant_type type;
+    std::string val;
+}
